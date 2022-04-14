@@ -1,8 +1,8 @@
 @echo off
 setlocal enableDelayedExpansion
-FOR /l %%N in (16,1,30) do (
+FOR /l %%N in (1,1,31) do (
     set "NUM=00%%N"
-    set "DIRNAME=cw_!NUM:~-2!_4_2022"
+    set "DIRNAME=cw_!NUM:~-2!_5_2022"
     md !DIRNAME!
     echo.>"!DIRNAME!\app.js"
 )
