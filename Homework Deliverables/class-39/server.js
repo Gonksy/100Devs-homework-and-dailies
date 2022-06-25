@@ -1,6 +1,9 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const PORT = 8000
+
+app.use(cors())
 
 const champions = {
   'veigar': {
@@ -38,6 +41,6 @@ app.get('/api/:champ', (req, res)=>{
 })
 
 
-app.listen(PORT, ()=> {
+app.listen(process.env.PORT || PORT, ()=> {
   console.log(`Ayo we live we live on ${PORT}`)
 })
