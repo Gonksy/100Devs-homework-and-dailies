@@ -24,3 +24,14 @@ function sortArray(array) {
 
   return sortedArray
 }
+
+
+//Refactored:
+function sortArray2(array) {
+  const odd = array.filter(x => x%2 !== 0).sort((a,b) => a-b)
+  const sortedArray = array.map(x => {
+    if (x%2 === 0 ) return x
+    else return odd.shift()
+  })
+  return sortedArray
+}
