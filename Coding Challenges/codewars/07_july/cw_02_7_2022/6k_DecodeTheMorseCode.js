@@ -31,3 +31,13 @@ decodeMorse = function(morseCode){
 
   return message
 }
+
+//Refactor:
+//Not my solution, learning:
+decodeMorse2 = function(morseCode){
+  const decodeMorseLetter = (letter) => MORSE_CODE[letter]
+  
+  const decodeMorseWord = (word) => word.split(' ').map(decodeMorseLetter).join('')
+  
+  return morseCode.trim().split('   ').map(decodeMorseWord).join(' ')
+}
